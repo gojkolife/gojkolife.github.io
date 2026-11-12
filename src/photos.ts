@@ -4,7 +4,8 @@ export interface Photo {
   id: string;
   title: string;
   place: string;
-  year: string;
+  /** optional, leave out if unsure */
+  year?: string;
   story: string;
   alt: string;
   /** width / height of the prepared image */
@@ -14,28 +15,25 @@ export interface Photo {
 export const photos: Photo[] = [
   {
     id: 'north',
-    title: 'The road north',
-    place: 'Dalton Highway, Alaska',
-    year: '2025',
-    story: 'Minus twenty, empty road, and a mountain that made us stop the car.',
+    title: 'Into the cold',
+    place: 'Alaska',
+    story: 'One of the most dangerous roads in Alaska. Ice on the asphalt, nobody else in sight, and a mountain waiting at the end of it.',
     alt: 'A white off-road vehicle drives an icy highway towards a snow-covered mountain in Alaska.',
     ratio: 2000 / 1333
   },
   {
     id: 'lagoon',
     title: 'One set of footprints',
-    place: 'French Polynesia',
-    year: '2025',
-    story: 'From above, the lagoon turns every shade of blue. Down there, just one person and the tide.',
+    place: 'Rangiroa, French Polynesia',
+    story: 'An empty island in Rangiroa. From above, the lagoon turns every shade of blue, and there is only one set of footprints in the sand.',
     alt: 'Aerial view of palm trees, a white sand beach and a turquoise lagoon with one person walking along the shore.',
     ratio: 2000 / 1125
   },
   {
     id: 'haystack',
-    title: 'Morning haze',
+    title: 'Sea mist',
     place: 'Cannon Beach, Oregon',
-    year: '2025',
-    story: 'Sea mist softened everything. Three friends, one rock, and the light doing the rest.',
+    story: 'A stop on a road trip through America. Sea mist softened everything, and the light did the rest.',
     alt: 'Three people talking on a dark sand beach in front of Haystack Rock, softened by sea mist.',
     ratio: 1590 / 1333
   }

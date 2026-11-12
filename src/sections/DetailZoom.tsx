@@ -46,7 +46,7 @@ export default function DetailZoom({ photo, index, focus }: Props) {
         <span className="zoom-ring" aria-hidden="true" style={{ left: `${focus.x}%`, top: `${focus.y}%` }} />
         <p className="zoom-intro label">{num} — Look closer</p>
         <div className="zoom-caption">
-          <p className="label">{num} — {photo.place}, {photo.year}</p>
+          <p className="label">{num} — {photo.place}{photo.year ? `, ${photo.year}` : ''}</p>
           <h2>{photo.title}</h2>
           <p className="chapter-story">{photo.story}</p>
         </div>

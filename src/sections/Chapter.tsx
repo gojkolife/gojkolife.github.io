@@ -49,7 +49,7 @@ export default function Chapter({ photo, index, layout }: Props) {
         <img src={src(photo.id, 2000)} srcSet={srcSet(photo.id)} sizes={layout === 'full' ? '100vw' : '(min-width: 900px) 58vw, 100vw'} alt={photo.alt} loading="lazy" />
       </figure>
       <div className="chapter-text">
-        <p className="label">{String(index).padStart(2, '0')} — {photo.place}, {photo.year}</p>
+        <p className="label">{String(index).padStart(2, '0')} — {photo.place}{photo.year ? `, ${photo.year}` : ''}</p>
         <h2>{photo.title}</h2>
         <p className="chapter-story">{photo.story}</p>
       </div>
