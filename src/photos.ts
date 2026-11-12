@@ -20,6 +20,12 @@ export interface Photo {
 
 const OKAPUKA = 'Okapuka, Namibia';
 
+/** Portrait for the About section (not part of the gallery) */
+export const aboutPhoto = {
+  id: 'about-alaska',
+  alt: 'Gojko leaning on a white off-road vehicle with its headlights on, holding a camera, as snow falls on an Alaskan road.'
+};
+
 const list: Omit<Photo, 'ratio'>[] = [
   {
     id: 'north',
@@ -29,11 +35,25 @@ const list: Omit<Photo, 'ratio'>[] = [
     alt: 'A white off-road vehicle drives an icy highway towards a snow-covered mountain in Alaska.'
   },
   {
+    id: 'fushimi-inari',
+    title: 'A thousand gates',
+    place: 'Fushimi Inari-taisha, Kyoto',
+    story: '',
+    alt: 'A path winding through a tunnel of bright orange torii gates with black Japanese inscriptions.'
+  },
+  {
     id: 'lagoon',
     title: 'One set of footprints',
     place: 'Rangiroa, French Polynesia',
     story: 'An empty island in Rangiroa. From above, the lagoon turns every shade of blue, and there is only one set of footprints in the sand.',
     alt: 'Aerial view of palm trees, a white sand beach and a turquoise lagoon with one person walking along the shore.'
+  },
+  {
+    id: 'lombok-weaver',
+    title: 'The hat maker',
+    place: 'Lombok, Indonesia',
+    story: '',
+    alt: 'An older man in a straw hat and red sweater sits on a wooden bench, weaving a new hat from dried leaves, green hills behind him.'
   },
   {
     id: 'cheetah-gaze',
@@ -57,6 +77,13 @@ const list: Omit<Photo, 'ratio'>[] = [
     alt: 'Close-up portrait of a grey langur monkey with a black face, wild eyebrows and amber eyes.'
   },
   {
+    id: 'alaska-cabin',
+    title: 'Somewhere quiet',
+    place: 'Alaska',
+    story: '',
+    alt: 'A red cabin on the shore of a frozen lake, dark spruce forest around it and snow-covered mountains in the clouds behind.'
+  },
+  {
     id: 'haystack',
     title: 'Sea mist',
     place: 'Cannon Beach, Oregon',
@@ -69,6 +96,13 @@ const list: Omit<Photo, 'ratio'>[] = [
     place: OKAPUKA,
     story: '',
     alt: 'Close-up of a white rhino with a long horn, head lowered in front of dark thorn bushes.'
+  },
+  {
+    id: 'canada-hike',
+    title: 'The postcard view',
+    place: 'Canadian Rockies',
+    story: '',
+    alt: 'A hand holding a small Canmore, Canada magnet in front of a turquoise mountain lake and forested valley.'
   },
   {
     id: 'crocodile',

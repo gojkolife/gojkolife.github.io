@@ -43,7 +43,7 @@ export default function Hero({ photo }: { photo: Photo }) {
           textAlign="left"
         />
         <div className="hero-meta">
-          <p className="label">Travel &amp; landscape photography</p>
+          <p className="label">Travel photography</p>
           <p className="label">Colour · Detail · Story</p>
         </div>
       </div>

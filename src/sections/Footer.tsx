@@ -8,9 +8,8 @@ export default function Footer() {
         <em>something together.</em>
       </h2>
       <div className="footer-links">
-        {/* TODO: replace with real email and Instagram */}
-        <a href="mailto:hello@example.com">hello@example.com</a>
-        <a href="https://instagram.com/" target="_blank" rel="noreferrer">Instagram</a>
+        <a href="mailto:kristijan.gojkovic@outlook.com">kristijan.gojkovic@outlook.com</a>
+        <a href="https://www.instagram.com/gojkolife/" target="_blank" rel="noreferrer">Instagram @gojkolife</a>
       </div>
       <div className="footer-base label">
         <span>© {new Date().getFullYear()} Gojkolife</span>

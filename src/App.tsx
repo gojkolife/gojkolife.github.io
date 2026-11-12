@@ -5,6 +5,7 @@ import Intro from './sections/Intro';
 import Chapter from './sections/Chapter';
 import DetailZoom from './sections/DetailZoom';
 import Gallery from './sections/Gallery';
+import About from './sections/About';
 import Footer from './sections/Footer';
 
 export default function App() {
@@ -19,6 +20,7 @@ export default function App() {
         <nav aria-label="Main">
           <a href="#stories">Stories</a>
           <a href="#work">Work</a>
+          <a href="#about">About</a>
           <a href="#contact">Contact</a>
         </nav>
       </header>
@@ -33,6 +35,7 @@ export default function App() {
           <Chapter photo={cheetah} index={5} layout="split" />
         </section>
         <Gallery photos={photos} />
+        <About />
       </main>
       <Footer />
     </>
