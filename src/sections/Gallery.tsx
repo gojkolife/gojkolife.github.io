@@ -3,7 +3,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { src, type Category, type Photo } from '../photos';
 
-const FILTERS: ('All' | Category)[] = ['All', 'Places', 'Animals'];
+const FILTERS: ('All' | Category)[] = ['All', 'Places', 'People', 'Animals'];
 
 export default function Gallery({ photos }: { photos: Photo[] }) {
   const root = useRef<HTMLElement>(null);

@@ -3,7 +3,7 @@
 // The order below is the order of the "Selected work" gallery.
 import sizes from './photo-sizes.json';
 
-export type Category = 'Animals' | 'Places';
+export type Category = 'Places' | 'People' | 'Animals';
 
 export interface Photo {
   id: string;
@@ -56,7 +56,7 @@ const list: Omit<Photo, 'ratio'>[] = [
   },
   {
     id: 'lombok-weaver',
-    category: 'Places',
+    category: 'People',
     title: 'The hat maker',
     place: 'Lombok, Indonesia',
     story: '',
@@ -69,6 +69,14 @@ const list: Omit<Photo, 'ratio'>[] = [
     place: 'Cuba',
     story: '',
     alt: 'A classic blue American car and a moped on a city street in Cuba, backlit by low golden sunlight.'
+  },
+  {
+    id: 'cuba-step',
+    category: 'People',
+    title: 'Afternoon on the step',
+    place: 'Cuba',
+    story: '',
+    alt: 'Black and white portrait of an older man with a white moustache sitting on a step against a two-tone wall, looking into the camera.'
   },
   {
     id: 'cheetah-gaze',
@@ -95,6 +103,14 @@ const list: Omit<Photo, 'ratio'>[] = [
     alt: 'Close-up portrait of a grey langur monkey with a black face, wild eyebrows and amber eyes.'
   },
   {
+    id: 'cuba-thumbs',
+    category: 'People',
+    title: 'Two thumbs up',
+    place: 'Cuba',
+    story: '',
+    alt: 'Black and white portrait of a man in a bucket hat and patterned shirt giving two thumbs up with a serious face.'
+  },
+  {
     id: 'alaska-cabin',
     category: 'Places',
     title: 'Somewhere quiet',
@@ -117,6 +133,14 @@ const list: Omit<Photo, 'ratio'>[] = [
     place: 'Cannon Beach, Oregon',
     story: 'A stop on a road trip through America. Sea mist softened everything, and the light did the rest.',
     alt: 'Three people talking on a dark sand beach in front of Haystack Rock, softened by sea mist.'
+  },
+  {
+    id: 'cuba-chess',
+    category: 'People',
+    title: 'Your move',
+    place: 'Cuba',
+    story: '',
+    alt: 'Black and white photo of a man on a stone bench reaching for a chess piece on a small board beside him.'
   },
   {
     id: 'rhino',
