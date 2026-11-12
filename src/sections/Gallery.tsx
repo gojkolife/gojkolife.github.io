@@ -31,7 +31,7 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
             </div>
             <figcaption>
               <span>{p.title}</span>
-              <span className="label">{p.place}</span>
+              {p.place && <span className="label">{p.place}</span>}
             </figcaption>
           </figure>
         ))}

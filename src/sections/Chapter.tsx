@@ -1,15 +1,17 @@
 import { useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { src, srcSet, type Photo } from '../photos';
+import { src, srcSet, where, type Photo } from '../photos';
 
 interface Props {
   photo: Photo;
   index: number;
   layout: 'full' | 'split';
+  /** put the text on the left */
+  reverse?: boolean;
 }
 
-export default function Chapter({ photo, index, layout }: Props) {
+export default function Chapter({ photo, index, layout, reverse = false }: Props) {
   const root = useRef<HTMLElement>(null);
 
   useGSAP(
@@ -44,14 +46,14 @@ export default function Chapter({ photo, index, layout }: Props) {
   );
 
   return (
-    <article className={`chapter chapter--${layout}`} ref={root}>
+    <article className={`chapter chapter--${layout}${reverse ? ' chapter--reverse' : ''}`} ref={root}>
       <figure className="chapter-frame" style={{ aspectRatio: layout === 'split' ? photo.ratio : undefined }}>
         <img src={src(photo.id, 2000)} srcSet={srcSet(photo.id)} sizes={layout === 'full' ? '100vw' : '(min-width: 900px) 58vw, 100vw'} alt={photo.alt} loading="lazy" />
       </figure>
       <div className="chapter-text">
-        <p className="label">{String(index).padStart(2, '0')} — {photo.place}{photo.year ? `, ${photo.year}` : ''}</p>
+        <p className="label">{String(index).padStart(2, '0')} — {where(photo)}</p>
         <h2>{photo.title}</h2>
-        <p className="chapter-story">{photo.story}</p>
+        {photo.story && <p className="chapter-story">{photo.story}</p>}
       </div>
     </article>
   );
