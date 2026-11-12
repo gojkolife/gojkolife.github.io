@@ -208,6 +208,14 @@ const list: Omit<Photo, 'ratio'>[] = [
     alt: 'A person in a striped shirt dancing on the white clay pan of Deadvlei, with a dead tree and a red dune behind.'
   },
   {
+    id: 'ibiza-exterior',
+    category: 'Stays',
+    title: 'Arrival',
+    place: 'Ibiza',
+    story: '',
+    alt: 'Stone steps leading up to a whitewashed Ibiza house with a reed-covered terrace, wooden lounge furniture and pine trees behind.'
+  },
+  {
     id: 'ibiza-1',
     category: 'Stays',
     title: 'The view from inside',
@@ -232,12 +240,28 @@ const list: Omit<Photo, 'ratio'>[] = [
     alt: 'A wooden daybed with grey cushions and a low table holding an open book and a cup, in warm sunlight in front of dry grass and trees.'
   },
   {
-    id: 'ibiza-4',
+    id: 'ibiza-pool',
     category: 'Stays',
-    title: 'Two pairs of sandals',
+    title: 'Pool with a view',
     place: 'Ibiza',
     story: '',
-    alt: 'A wooden armchair on a stone terrace in low sunlight, two pairs of sandals beside it and green hills in the distance.'
+    alt: 'A turquoise pool framed by agave leaves, a tall woven vase on the stone terrace and pine-covered hills beyond.'
+  },
+  {
+    id: 'ibiza-bedroom',
+    category: 'Stays',
+    title: 'Whitewashed calm',
+    place: 'Ibiza',
+    story: '',
+    alt: 'A bright white bedroom with a deep wall niche, white bedding, two patterned cushions and a small black lamp on a wooden stool.'
+  },
+  {
+    id: 'ibiza-interior',
+    category: 'Stays',
+    title: 'Light from above',
+    place: 'Ibiza',
+    story: '',
+    alt: 'A bright interior with a skylight, a tall cactus in a concrete pot, a low wooden bench and a large painting, with a rain shower beyond.'
   },
   {
     id: 'ibiza-5',
@@ -246,6 +270,14 @@ const list: Omit<Photo, 'ratio'>[] = [
     place: 'Ibiza',
     story: '',
     alt: 'A whitewashed wall, a dark wooden door with a towel and hat on hooks, a potted cactus and a wooden chair on a stone terrace.'
+  },
+  {
+    id: 'ibiza-4',
+    category: 'Stays',
+    title: 'Two pairs of sandals',
+    place: 'Ibiza',
+    story: '',
+    alt: 'A wooden armchair on a stone terrace in low sunlight, two pairs of sandals beside it and green hills in the distance.'
   },
 ];
 

@@ -87,6 +87,22 @@
     1333,
     2000
   ],
+  "ibiza-bedroom": [
+    1333,
+    2000
+  ],
+  "ibiza-exterior": [
+    1420,
+    2000
+  ],
+  "ibiza-interior": [
+    2000,
+    1333
+  ],
+  "ibiza-pool": [
+    1333,
+    2000
+  ],
   "lagoon": [
     2000,
     1125
