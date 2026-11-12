@@ -3,9 +3,11 @@
 For every JPEG in originals/ this writes two WebP sizes (1000px and 2000px wide),
 strips all metadata (camera data and GPS location), and prints the size of each file.
 Optional crops live in CROPS so the original file is never changed.
+It also writes src/photo-sizes.json (width and height of each photo).
 
 Run:  python3 scripts/prepare-photos.py
 """
+import json
 from pathlib import Path
 from PIL import Image, ImageOps
 
@@ -16,15 +18,20 @@ WIDTHS = (1000, 2000)
 CROPS = {"haystack": (0, 0, 0.795, 1)}  # removes the blurred hand on the right edge
 
 OUT.mkdir(parents=True, exist_ok=True)
+sizes = {}
 for src in sorted(SRC.glob("*.jp*g")):
     im = ImageOps.exif_transpose(Image.open(src)).convert("RGB")
     if src.stem in CROPS:
         l, t, r, b = CROPS[src.stem]
         w, h = im.size
         im = im.crop((int(l * w), int(t * h), int(r * w), int(b * h)))
+    sizes[src.stem] = [im.width, im.height]
     for width in WIDTHS:
         w = min(width, im.width)
         out = im.resize((w, round(im.height * w / im.width)), Image.LANCZOS)
         dest = OUT / f"{src.stem}-{width}.webp"
         out.save(dest, "WEBP", quality=82, method=6)  # saved without any metadata
         print(f"{dest.name:28} {out.width}x{out.height}  {dest.stat().st_size // 1024} KB")
+
+# width and height of every photo, so the site can reserve the right space before it loads
+(ROOT / "src" / "photo-sizes.json").write_text(json.dumps(sizes, indent=2) + "\n")

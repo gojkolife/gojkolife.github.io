@@ -10,7 +10,7 @@ import Footer from './sections/Footer';
 export default function App() {
   useSmoothScroll();
   const byId = (id: string) => photos.find((p) => p.id === id)!;
-  const [north, lagoon, haystack, deadvlei, crocodile] = ['north', 'lagoon', 'haystack', 'deadvlei', 'crocodile'].map(byId);
+  const [north, lagoon, haystack, deadvlei, crocodile, cheetah] = ['north', 'lagoon', 'haystack', 'deadvlei', 'crocodile', 'cheetah-gaze'].map(byId);
 
   return (
     <>
@@ -29,7 +29,8 @@ export default function App() {
           <Chapter photo={haystack} index={1} layout="split" />
           <DetailZoom photo={lagoon} index={2} focus={{ x: 48.4, y: 51.1 }} />
           <Chapter photo={deadvlei} index={3} layout="split" reverse />
-          <DetailZoom photo={crocodile} index={4} focus={{ x: 49.2, y: 49.7 }} zoom={2.2} hint="Into the eye" />
+          <DetailZoom photo={crocodile} index={4} focus={{ x: 47.8, y: 48.8 }} zoom={2.2} hint="Into the eye" />
+          <Chapter photo={cheetah} index={5} layout="split" />
         </section>
         <Gallery photos={photos} />
       </main>
