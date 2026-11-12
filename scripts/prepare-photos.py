@@ -15,7 +15,10 @@ ROOT = Path(__file__).resolve().parent.parent
 SRC, OUT = ROOT / "originals", ROOT / "public" / "photos"
 WIDTHS = (1000, 2000)
 # name -> (left, top, right, bottom) as fractions of the image
-CROPS = {"haystack": (0, 0, 0.795, 1)}  # removes the blurred hand on the right edge
+CROPS = {
+    "haystack": (0, 0, 0.795, 1),  # removes the blurred hand on the right edge
+    "alp-cow": (0, 0, 1, 0.84),  # removes the fence wire in the bottom corner
+}
 
 OUT.mkdir(parents=True, exist_ok=True)
 sizes = {}

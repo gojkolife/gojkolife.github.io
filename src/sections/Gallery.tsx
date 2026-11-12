@@ -1,10 +1,15 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { src, type Photo } from '../photos';
+import { src, type Category, type Photo } from '../photos';
+
+const FILTERS: ('All' | Category)[] = ['All', 'Places', 'Animals'];
 
 export default function Gallery({ photos }: { photos: Photo[] }) {
   const root = useRef<HTMLElement>(null);
+  const [filter, setFilter] = useState<(typeof FILTERS)[number]>('All');
+  const shown = filter === 'All' ? photos : photos.filter((p) => p.category === filter);
+  const count = (f: (typeof FILTERS)[number]) => (f === 'All' ? photos.length : photos.filter((p) => p.category === f).length);
 
   useGSAP(
     () => {
@@ -14,17 +19,23 @@ export default function Gallery({ photos }: { photos: Photo[] }) {
         });
       });
     },
-    { scope: root }
+    { scope: root, dependencies: [filter], revertOnUpdate: true }
   );
 
   return (
     <section className="gallery" id="work" ref={root}>
       <div className="gallery-head">
         <h2>Selected work</h2>
-        <p className="label">{String(photos.length).padStart(2, '0')} photographs</p>
+        <div className="gallery-filters" role="group" aria-label="Filter photos">
+          {FILTERS.map((f) => (
+            <button key={f} type="button" className="label" aria-pressed={filter === f} onClick={() => setFilter(f)}>
+              {f} <span>{String(count(f)).padStart(2, '0')}</span>
+            </button>
+          ))}
+        </div>
       </div>
       <div className="gallery-grid">
-        {photos.map((p) => (
+        {shown.map((p) => (
           <figure className="gallery-item" key={p.id}>
             <div className="gallery-img" style={{ aspectRatio: p.ratio }}>
               <img src={src(p.id, 1000)} alt={p.alt} loading="lazy" />

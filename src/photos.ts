@@ -3,8 +3,11 @@
 // The order below is the order of the "Selected work" gallery.
 import sizes from './photo-sizes.json';
 
+export type Category = 'Animals' | 'Places';
+
 export interface Photo {
   id: string;
+  category: Category;
   title: string;
   /** leave empty ('') until known */
   place: string;
@@ -29,6 +32,7 @@ export const aboutPhoto = {
 const list: Omit<Photo, 'ratio'>[] = [
   {
     id: 'north',
+    category: 'Places',
     title: 'Into the cold',
     place: 'Dalton Highway, Alaska',
     story: 'One of the most dangerous roads in Alaska. Ice on the asphalt, nobody else in sight, and a mountain waiting at the end of it.',
@@ -36,6 +40,7 @@ const list: Omit<Photo, 'ratio'>[] = [
   },
   {
     id: 'fushimi-inari',
+    category: 'Places',
     title: 'A thousand gates',
     place: 'Fushimi Inari-taisha, Kyoto',
     story: '',
@@ -43,6 +48,7 @@ const list: Omit<Photo, 'ratio'>[] = [
   },
   {
     id: 'lagoon',
+    category: 'Places',
     title: 'One set of footprints',
     place: 'Rangiroa, French Polynesia',
     story: 'An empty island in Rangiroa. From above, the lagoon turns every shade of blue, and there is only one set of footprints in the sand.',
@@ -50,13 +56,23 @@ const list: Omit<Photo, 'ratio'>[] = [
   },
   {
     id: 'lombok-weaver',
+    category: 'Places',
     title: 'The hat maker',
     place: 'Lombok, Indonesia',
     story: '',
     alt: 'An older man in a straw hat and red sweater sits on a wooden bench, weaving a new hat from dried leaves, green hills behind him.'
   },
   {
+    id: 'havana',
+    category: 'Places',
+    title: 'Golden hour traffic',
+    place: 'Cuba',
+    story: '',
+    alt: 'A classic blue American car and a moped on a city street in Cuba, backlit by low golden sunlight.'
+  },
+  {
     id: 'cheetah-gaze',
+    category: 'Animals',
     title: 'Eye contact',
     place: OKAPUKA,
     story: 'Safari at Okapuka. The others rested in the shade, and this one decided to look straight back.',
@@ -64,6 +80,7 @@ const list: Omit<Photo, 'ratio'>[] = [
   },
   {
     id: 'deadvlei',
+    category: 'Places',
     title: 'What stays',
     place: 'Deadvlei, Namibia',
     story: 'Trees that died centuries ago, still standing between red dunes and a deep blue sky. The colours do the talking.',
@@ -71,6 +88,7 @@ const list: Omit<Photo, 'ratio'>[] = [
   },
   {
     id: 'langur',
+    category: 'Animals',
     title: 'Reflections',
     place: 'Near Jaipur, India',
     story: '',
@@ -78,13 +96,23 @@ const list: Omit<Photo, 'ratio'>[] = [
   },
   {
     id: 'alaska-cabin',
+    category: 'Places',
     title: 'Somewhere quiet',
     place: 'Alaska',
     story: '',
     alt: 'A red cabin on the shore of a frozen lake, dark spruce forest around it and snow-covered mountains in the clouds behind.'
   },
   {
+    id: 'macaque',
+    category: 'Animals',
+    title: 'Unimpressed',
+    place: '',
+    story: '',
+    alt: 'A long-tailed macaque sitting on white sand in front of dark rocks, glancing sideways with amber eyes.'
+  },
+  {
     id: 'haystack',
+    category: 'Places',
     title: 'Sea mist',
     place: 'Cannon Beach, Oregon',
     story: 'A stop on a road trip through America. Sea mist softened everything, and the light did the rest.',
@@ -92,20 +120,23 @@ const list: Omit<Photo, 'ratio'>[] = [
   },
   {
     id: 'rhino',
+    category: 'Animals',
     title: 'Heavyweight',
     place: OKAPUKA,
     story: '',
     alt: 'Close-up of a white rhino with a long horn, head lowered in front of dark thorn bushes.'
   },
   {
-    id: 'canada-hike',
-    title: 'The postcard view',
+    id: 'rockies-cabin',
+    category: 'Places',
+    title: 'Fireweed season',
     place: 'Canadian Rockies',
     story: '',
-    alt: 'A hand holding a small Canmore, Canada magnet in front of a turquoise mountain lake and forested valley.'
+    alt: 'A small cabin among spruce trees behind a meadow of pink fireweed, with a glacier and waterfall between mountains beyond.'
   },
   {
     id: 'crocodile',
+    category: 'Animals',
     title: 'Patience',
     place: OKAPUKA,
     story: 'Half asleep in the sun, one eye still open. The closer you look, the more there is to see.',
@@ -113,20 +144,23 @@ const list: Omit<Photo, 'ratio'>[] = [
   },
   {
     id: 'tiger',
+    category: 'Animals',
     title: 'The yawn',
     place: 'Ranthambore, India',
     story: '',
     alt: 'A tiger lying on green grass with its mouth wide open, showing its fangs.'
   },
   {
-    id: 'cheetahs-walking',
-    title: 'Moving on',
-    place: OKAPUKA,
+    id: 'alp-cow',
+    category: 'Animals',
+    title: 'The locals',
+    place: 'Switzerland',
     story: '',
-    alt: 'Two cheetahs walking away through golden grass.'
+    alt: 'A black and white cow with a bell standing on an alpine meadow, with snow-capped Swiss Alps behind.'
   },
   {
     id: 'beach-bali',
+    category: 'Places',
     title: 'Through the leaves',
     place: 'Kelingking Beach, Nusa Penida',
     year: '2023',
@@ -135,6 +169,7 @@ const list: Omit<Photo, 'ratio'>[] = [
   },
   {
     id: 'zebras',
+    category: 'Animals',
     title: 'Two of a kind',
     place: OKAPUKA,
     story: '',
@@ -142,18 +177,12 @@ const list: Omit<Photo, 'ratio'>[] = [
   },
   {
     id: 'deadvlei-dance',
+    category: 'Places',
     title: 'Dancing in Deadvlei',
     place: 'Deadvlei, Namibia',
     story: '',
     alt: 'A person in a striped shirt dancing on the white clay pan of Deadvlei, with a dead tree and a red dune behind.'
   },
-  {
-    id: 'cheetah-shade',
-    title: 'In the shade',
-    place: OKAPUKA,
-    story: '',
-    alt: 'A cheetah sitting under a thorny tree in dry golden grass, looking towards the camera.'
-  }
 ];
 
 const size: Record<string, number[]> = sizes;
