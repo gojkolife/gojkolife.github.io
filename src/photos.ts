@@ -3,7 +3,7 @@
 // The order below is the order of the "Selected work" gallery.
 import sizes from './photo-sizes.json';
 
-export type Category = 'Places' | 'People' | 'Animals';
+export type Category = 'Places' | 'People' | 'Animals' | 'Stays';
 
 export interface Photo {
   id: string;
@@ -206,6 +206,46 @@ const list: Omit<Photo, 'ratio'>[] = [
     place: 'Deadvlei, Namibia',
     story: '',
     alt: 'A person in a striped shirt dancing on the white clay pan of Deadvlei, with a dead tree and a red dune behind.'
+  },
+  {
+    id: 'ibiza-1',
+    category: 'Stays',
+    title: 'The view from inside',
+    place: 'Ibiza',
+    story: '',
+    alt: 'View through open dark doors onto a shaded terrace with a wooden daybed, a coffee cup on a low table and pine-covered hills beyond.'
+  },
+  {
+    id: 'ibiza-2',
+    category: 'Stays',
+    title: 'Morning coffee',
+    place: 'Ibiza',
+    story: '',
+    alt: 'A tattooed man sitting on a terrace daybed with a coffee cup, looking out over forested hills under a reed roof.'
+  },
+  {
+    id: 'ibiza-3',
+    category: 'Stays',
+    title: 'Slow afternoon',
+    place: 'Ibiza',
+    story: '',
+    alt: 'A wooden daybed with grey cushions and a low table holding an open book and a cup, in warm sunlight in front of dry grass and trees.'
+  },
+  {
+    id: 'ibiza-4',
+    category: 'Stays',
+    title: 'Two pairs of sandals',
+    place: 'Ibiza',
+    story: '',
+    alt: 'A wooden armchair on a stone terrace in low sunlight, two pairs of sandals beside it and green hills in the distance.'
+  },
+  {
+    id: 'ibiza-5',
+    category: 'Stays',
+    title: 'White walls',
+    place: 'Ibiza',
+    story: '',
+    alt: 'A whitewashed wall, a dark wooden door with a towel and hat on hooks, a potted cactus and a wooden chair on a stone terrace.'
   },
 ];
 
