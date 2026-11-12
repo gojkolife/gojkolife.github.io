@@ -77,6 +77,15 @@ export const photos: Photo[] = [
     story: '',
     alt: 'Two zebras in tall golden grass, one in profile and one looking over its back.',
     ratio: 1333 / 2000
+  },
+  {
+    id: 'beach-bali',
+    title: 'Through the leaves',
+    place: 'Bali',
+    year: '2023',
+    story: '',
+    alt: 'A turquoise bay and a sandy beach under green cliffs in Bali, seen from above through tropical leaves.',
+    ratio: 2000 / 3000
   }
 ];
 
