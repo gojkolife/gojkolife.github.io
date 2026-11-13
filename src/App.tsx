@@ -11,7 +11,7 @@ import Footer from './sections/Footer';
 export default function App() {
   useSmoothScroll();
   const byId = (id: string) => photos.find((p) => p.id === id)!;
-  const [north, lagoon, haystack, deadvlei, crocodile, cheetah] = ['north', 'lagoon', 'haystack', 'deadvlei', 'crocodile', 'cheetah-gaze'].map(byId);
+  const [north, deadvlei, lagoon, crocodile, person] = ['north', 'deadvlei', 'lagoon', 'crocodile', 'lombok-weaver'].map(byId);
 
   return (
     <>
@@ -28,11 +28,11 @@ export default function App() {
         <Hero photo={north} />
         <Intro />
         <section id="stories" aria-label="Stories">
-          <Chapter photo={haystack} index={1} layout="split" />
-          <DetailZoom photo={lagoon} index={2} focus={{ x: 48.4, y: 51.1 }} />
-          <Chapter photo={deadvlei} index={3} layout="split" reverse />
-          <DetailZoom photo={crocodile} index={4} focus={{ x: 47.8, y: 48.8 }} zoom={2.2} hint="Into the eye" />
-          <Chapter photo={cheetah} index={5} layout="split" />
+          <Chapter photo={deadvlei} index={1} layout="split" reverse />
+          <Chapter photo={lagoon} index={2} layout="full" />
+          {/* The one zoom moment on the site */}
+          <DetailZoom photo={crocodile} index={3} focus={{ x: 47.8, y: 48.8 }} zoom={2.2} hint="Into the eye" />
+          <Chapter photo={person} index={4} layout="split" />
         </section>
         <Gallery photos={photos} />
         <About />

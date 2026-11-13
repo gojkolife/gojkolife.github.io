@@ -27,11 +27,6 @@ export default function Chapter({ photo, index, layout, reverse = false }: Props
             scrollTrigger: { trigger: root.current, start: 'top 85%', end: 'top 15%', scrub: true }
           }
         );
-        gsap.fromTo(
-          '.chapter-frame img',
-          { scale: 1.25 },
-          { scale: 1, ease: 'none', scrollTrigger: { trigger: root.current, start: 'top bottom', end: 'bottom top', scrub: true } }
-        );
         gsap.from('.chapter-text > *', {
           opacity: 0,
           y: 24,

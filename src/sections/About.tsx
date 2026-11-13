@@ -9,11 +9,6 @@ export default function About() {
   useGSAP(
     () => {
       gsap.matchMedia().add('(prefers-reduced-motion: no-preference)', () => {
-        gsap.fromTo(
-          '.about-photo img',
-          { scale: 1.2 },
-          { scale: 1, ease: 'none', scrollTrigger: { trigger: root.current, start: 'top bottom', end: 'bottom top', scrub: true } }
-        );
         gsap.from('.about-text > *', {
           opacity: 0,
           y: 24,
